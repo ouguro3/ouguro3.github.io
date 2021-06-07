@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+
+    
+
+    
+    <title>더하기 사이클 | Ouguro BD</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="" />
+    
+    <meta name="description" content="백준 알고리즘 while 문 문제 문제 : 더하기 사이클 입력된 수가 10보다 작다면 앞에 0을 붙여 두 자리 수로 만들고, 각 자리의 숫자를 더한다.  입력된 수의 가장 오른쪽 자리 수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면 새로운  수를 만들 수 있다 예) 26 -&gt; 2+6 &#x3D; 8  -&gt; 새로운 수 68 -&gt; 6 + 8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="더하기 사이클">
+<meta property="og:url" content="https://ouguro3.github.io/2021/06/06/beakjoon/problem5/index.html">
+<meta property="og:site_name" content="Ouguro BD">
+<meta property="og:description" content="백준 알고리즘 while 문 문제 문제 : 더하기 사이클 입력된 수가 10보다 작다면 앞에 0을 붙여 두 자리 수로 만들고, 각 자리의 숫자를 더한다.  입력된 수의 가장 오른쪽 자리 수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면 새로운  수를 만들 수 있다 예) 26 -&gt; 2+6 &#x3D; 8  -&gt; 새로운 수 68 -&gt; 6 + 8">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-06-06T02:47:23.000Z">
+<meta property="article:modified_time" content="2021-06-06T03:08:22.757Z">
+<meta property="article:author" content="HB Lee">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favi.png" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/algorithm/">algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/algorithm/baek-joon/">baek joon</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%EC%9D%BC%EA%B8%B0/">일기</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%EC%9D%BC%EA%B8%B0/multicampus/">multicampus</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%EC%9D%BC%EA%B8%B0/%EA%B0%9C%EC%9D%B8-%EA%B3%B5%EB%B6%80/">개인 공부</a></li></ul></li></ul>
+                                
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/algorithm/">algorithm</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/algorithm/baek-joon/">baek joon</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-beakjoon/problem5" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        더하기 사이클
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/06/06/beakjoon/problem5/" class="article-date">
+       <time datetime="2021-06-06T02:47:23.000Z" itemprop="datePublished">2021-06-06</time>
+    </a>
+  </div>
+
+<!--  -->
+<!-- <div class="article-date"> -->
+<!--   <i class="fa fa-calendar-plus-o"></i> -->
+<!--   <a href="/2021/06/06/beakjoon/problem5/" class="article-date"> -->
+<!--      <time datetime="2021-06-06T03:08:22.757Z" itemprop="dateModified">2021-06-06</time> -->
+<!--   </a> -->
+<!-- </div> -->
+<!--  -->
+
+                
+
+                
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p><strong>백준 알고리즘 while 문 문제</strong></p>
+<h3 id="문제-더하기-사이클"><a href="#문제-더하기-사이클" class="headerlink" title="문제 : 더하기 사이클"></a>문제 : 더하기 사이클</h3><hr>
+<p>입력된 수가 10보다 작다면 앞에 0을 붙여 두 자리 수로 만들고, 각 자리의 숫자를 더한다. </p>
+<p>입력된 수의 가장 오른쪽 자리 수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면<br> 새로운  수를 만들 수 있다</p>
+<p>예) 26 -&gt; 2+6 = 8  -&gt; 새로운 수 68 -&gt; 6 + 8 = 14 -&gt; 새로운 수 84 -&gt; 8 + 4 = 12…    </p>
+<p>입력된 수가 몇번의 사이클만에 원래의 수와 같아지는지 구하는 프로그램 작성</p>
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Ex 입력</span><br><span class="line">26</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Ex 출력</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 내 답안</span><br><span class="line">n = int(input())</span><br><span class="line">cnt = 0</span><br><span class="line">m = n</span><br><span class="line">while True:</span><br><span class="line">    if m &lt; 10:</span><br><span class="line">        m1 = m*11</span><br><span class="line">    n2 = m // 10</span><br><span class="line">    n3 = m % 10</span><br><span class="line">    n4 = (n2+n3) % 10</span><br><span class="line">    n5 = n3*10 + n4</span><br><span class="line">    cnt += 1</span><br><span class="line">    if n5 == n:</span><br><span class="line">        break</span><br><span class="line">    m = n5</span><br><span class="line">print(cnt)</span><br></pre></td></tr></table></figure>
+<p>시간이 조금 걸렸다  </p>
+<p>처음에 생각한 방법은 더하기 전 숫자의 1의 자릿수와 더한 수를 str() 변환해 합치고  </p>
+<p>다시 int 로 변환하고 이런 과정을 거치는 것을 생각했는데 이걸 돌리면 시간도 더 걸리고<br>복잡해질것 같아 다시 생각했다  </p>
+<p>1의 자릿수는 입력받은 수에서 10으로 나눈 몫을,<br>10의 자릿수는 입력받은 수에서 10으로 나눈 값을 구하면 쉽게 얻을 수 있었다  </p>
+<p>둘을 더한 수에서 1의 자릿수를 추출하는것도 역시 더한 값에서 10으로 나눈 몫을 구했다  </p>
+<p>그 후에 원래 숫자의 1의 자릿수에 10을 곱해 10의 자릿수로 만들고 거기에 더한 값의<br>1의 자릿수를 더해 새로운 수를 구할 수 있었다  </p>
+<p>처음 문제를 볼 때 내가 너무 어렵게 생각하는 경향이 있는것같다  </p>
+<p>수학쪽이 약해서 그런걸까<br>그래도 풀고나니 퍼즐을 하나 푼 느낌이라 좋다 👍</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://ouguro3.github.io/2021/06/06/beakjoon/problem5/" data-id="ckpmtolv40003p0td3369f5rg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "HB Lee"
+        },
+        "headline": "더하기 사이클",
+        "image": "https://ouguro3.github.io",
+        "keywords": "",
+        "genre": "algorithm baek joon",
+        "datePublished": "2021-06-06",
+        "dateCreated": "2021-06-06",
+        "dateModified": "2021-06-06",
+        "url": "https://ouguro3.github.io/2021/06/06/beakjoon/problem5/",
+        "description": "백준 알고리즘 while 문 문제
+문제 : 더하기 사이클
+입력된 수가 10보다 작다면 앞에 0을 붙여 두 자리 수로 만들고, 각 자리의 숫자를 더한다. 
+입력된 수의 가장 오른쪽 자리 수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면 새로운  수를 만들 수 있다
+예) 26 -&gt; 2+6 = 8  -&gt; 새로운 수 68 -&gt; 6 + 8 ",
+        "wordCount": 341
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ouguro3" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/06/07/day/day15/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            데이터 사이언스/엔지니어 과정 14일차
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2021/06/05/day/day14/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">개인 공부 중</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/baek-joon/">baek joon</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EA%B8%B0/">일기</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EA%B8%B0/multicampus/">multicampus</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EA%B8%B0/%EA%B0%9C%EC%9D%B8-%EA%B3%B5%EB%B6%80/">개인 공부</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a><span class="archive-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%EC%9D%BC%EA%B8%B0/">일기</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/%EC%9D%BC%EA%B8%B0/multicampus/">multicampus</a></p>
+                            <p class="item-title"><a href="/2021/06/07/day/day15/" class="title">데이터 사이언스/엔지니어 과정 14일차</a></p>
+                            <p class="item-date"><time datetime="2021-06-07T08:16:41.000Z" itemprop="datePublished">2021-06-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/algorithm/">algorithm</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/algorithm/baek-joon/">baek joon</a></p>
+                            <p class="item-title"><a href="/2021/06/06/beakjoon/problem5/" class="title">더하기 사이클</a></p>
+                            <p class="item-date"><time datetime="2021-06-06T02:47:23.000Z" itemprop="datePublished">2021-06-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%EC%9D%BC%EA%B8%B0/">일기</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/%EC%9D%BC%EA%B8%B0/%EA%B0%9C%EC%9D%B8-%EA%B3%B5%EB%B6%80/">개인 공부</a></p>
+                            <p class="item-title"><a href="/2021/06/05/day/day14/" class="title">개인 공부 중</a></p>
+                            <p class="item-date"><time datetime="2021-06-05T14:44:49.000Z" itemprop="datePublished">2021-06-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/algorithm/">algorithm</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/algorithm/baek-joon/">baek joon</a></p>
+                            <p class="item-title"><a href="/2021/06/05/beakjoon/problem4/" class="title">X 보다 작은 수</a></p>
+                            <p class="item-date"><time datetime="2021-06-05T13:33:28.000Z" itemprop="datePublished">2021-06-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/algorithm/">algorithm</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/algorithm/baek-joon/">baek joon</a></p>
+                            <p class="item-title"><a href="/2021/06/05/beakjoon/problem3/" class="title">빠른 A + B</a></p>
+                            <p class="item-date"><time datetime="2021-06-05T13:30:28.000Z" itemprop="datePublished">2021-06-05</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 HB Lee</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://ouguro3.github.io/2021/06/06/beakjoon/problem5/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

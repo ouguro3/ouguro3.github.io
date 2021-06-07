@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+
+    
+
+    
+    <title>데이터 사이언스/엔지니어 과정 10일차 | Ouguro BD</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="" />
+    
+    <meta name="description" content="오늘의 학습 내용  numpy   파이썬 기초가 끝났고, 이제 다음 과정으로 진행된다   이 과목을 담당할 선생님이 오셨는데 푸근한 이미지에 유능해보이셨다   다만 이쪽에서는 조금 고민인게 기존에 사용하던 파이참을 쓰려니 뭔가 가독성이 떨어지는것 같고,   colab 이나 jupyter lab 에서 하자니 깃허브와 연동이 스무스하게 잘 되질 않는다  연동">
+<meta property="og:type" content="article">
+<meta property="og:title" content="데이터 사이언스&#x2F;엔지니어 과정 10일차">
+<meta property="og:url" content="https://ouguro3.github.io/2021/06/01/day/day10/index.html">
+<meta property="og:site_name" content="Ouguro BD">
+<meta property="og:description" content="오늘의 학습 내용  numpy   파이썬 기초가 끝났고, 이제 다음 과정으로 진행된다   이 과목을 담당할 선생님이 오셨는데 푸근한 이미지에 유능해보이셨다   다만 이쪽에서는 조금 고민인게 기존에 사용하던 파이참을 쓰려니 뭔가 가독성이 떨어지는것 같고,   colab 이나 jupyter lab 에서 하자니 깃허브와 연동이 스무스하게 잘 되질 않는다  연동">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://user-images.githubusercontent.com/84296244/120589728-418de200-c474-11eb-9ecd-472ce5fc8808.PNG">
+<meta property="article:published_time" content="2021-06-01T12:22:54.000Z">
+<meta property="article:modified_time" content="2021-06-05T11:28:07.811Z">
+<meta property="article:author" content="HB Lee">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/84296244/120589728-418de200-c474-11eb-9ecd-472ce5fc8808.PNG">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favi.png" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/algorithm/">algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/algorithm/baek-joon/">baek joon</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%EC%9D%BC%EA%B8%B0/">일기</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%EC%9D%BC%EA%B8%B0/multicampus/">multicampus</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%EC%9D%BC%EA%B8%B0/%EA%B0%9C%EC%9D%B8-%EA%B3%B5%EB%B6%80/">개인 공부</a></li></ul></li></ul>
+                                
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/%EC%9D%BC%EA%B8%B0/">일기</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/%EC%9D%BC%EA%B8%B0/multicampus/">multicampus</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-day/day10" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        데이터 사이언스/엔지니어 과정 10일차
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/06/01/day/day10/" class="article-date">
+       <time datetime="2021-06-01T12:22:54.000Z" itemprop="datePublished">2021-06-01</time>
+    </a>
+  </div>
+
+<!--  -->
+<!-- <div class="article-date"> -->
+<!--   <i class="fa fa-calendar-plus-o"></i> -->
+<!--   <a href="/2021/06/01/day/day10/" class="article-date"> -->
+<!--      <time datetime="2021-06-05T11:28:07.811Z" itemprop="dateModified">2021-06-05</time> -->
+<!--   </a> -->
+<!-- </div> -->
+<!--  -->
+
+                
+
+                
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <hr>
+<p>오늘의 학습 내용</p>
+<ul>
+<li>numpy</li>
+</ul>
+<hr>
+<p>파이썬 기초가 끝났고, 이제 다음 과정으로 진행된다  </p>
+<p>이 과목을 담당할 선생님이 오셨는데 푸근한 이미지에 유능해보이셨다  </p>
+<p>다만 이쪽에서는 조금 고민인게 기존에 사용하던 파이참을 쓰려니 뭔가 가독성이 떨어지는것 같고,  </p>
+<p>colab 이나 jupyter lab 에서 하자니 깃허브와 연동이 스무스하게 잘 되질 않는다 </p>
+<p>연동만 잘 되면 <strong>colab</strong> 을 사용하는게 보기도 편하고 뭔가 감성이 있는데  </p>
+<p>이게 다 내 귀차니즘에서 비롯된건가  </p>
+<p>numpy 쪽은 이제 기초 연산이라던지, 인덱싱, 슬라이싱 부터 천천히 하다가  </p>
+<p>오후에 머신러닝 쪽으로 이야기가 진행되어서 조금 놀랐다  </p>
+<p>물론 관련이 있긴하지만 기초 학습을 하고 있는데 갑자기 인공지능으로 가버리니  </p>
+<p>난이도가 1 ~ 2 정도에서 6 ~ 7 정도로 확 뛴 느낌을 받았다  </p>
+<p>내가 느낀 당혹스러움을 동기생들도 느꼈을까  </p>
+<p>어찌되었건 일단 기초 부분은 수업이 끝나고 다시 정리를 해놓았다  </p>
+<p>블로그에서도 따로 정리를 해놓아야 할듯 싶다  </p>
+<p>점점 속도가 빨라질텐데 벌써부터 이러니 걱정이 앞서지만  </p>
+<p>어쩔수 있나 내가 열심히 하는수밖에  </p>
+<p>7월까지 힘내보자  </p>
+<hr>
+<p><img src="https://user-images.githubusercontent.com/84296244/120589728-418de200-c474-11eb-9ecd-472ce5fc8808.PNG" alt="numpy 분류"><br>크게 4가지로 구분해 놓았다  </p>
+<p>물론 저것만으로 끝나진 않겠지만 기초라고 생각해 나눠놓았다  </p>
+<p>나중에도 계속 참고할 수 있을듯하다  </p>
+<hr>
+<p><img src="https://user-images.githubusercontent.com/84296244/120589734-4357a580-c474-11eb-95b2-e4d09379311a.PNG" alt="내용"><br>각 파일 내용인데 그냥 평범한 예시를 하나씩 코드로 쳐놓은것이다  </p>
+<p>colab 이였으면 좀 더 깔끔하고 <code>print()</code> 명령어도 필요 없었을텐데  </p>
+<p>굉장히 아쉬운 부분이다  </p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://github.com/ouguro3/Study/tree/main/for_data_analysis/Numpy">Numpy 기초 정리</a>  </p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://ouguro3.github.io/2021/06/01/day/day10/" data-id="ckpmtolv9000dp0tdcthj7i42" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "HB Lee"
+        },
+        "headline": "데이터 사이언스/엔지니어 과정 10일차",
+        "image": "https://ouguro3.github.iohttps://user-images.githubusercontent.com/84296244/120589728-418de200-c474-11eb-9ecd-472ce5fc8808.PNG",
+        "keywords": "",
+        "genre": "일기 multicampus",
+        "datePublished": "2021-06-01",
+        "dateCreated": "2021-06-01",
+        "dateModified": "2021-06-05",
+        "url": "https://ouguro3.github.io/2021/06/01/day/day10/",
+        "description": "
+오늘의 학습 내용
+
+numpy
+
+
+파이썬 기초가 끝났고, 이제 다음 과정으로 진행된다  
+이 과목을 담당할 선생님이 오셨는데 푸근한 이미지에 유능해보이셨다  
+다만 이쪽에서는 조금 고민인게 기존에 사용하던 파이참을 쓰려니 뭔가 가독성이 떨어지는것 같고,  
+colab 이나 jupyter lab 에서 하자니 깃허브와 연동이 스무스하게 잘 되질 않는다 
+연동",
+        "wordCount": 200
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ouguro3" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/06/02/day/day11/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            데이터 사이언스/엔지니어 과정 11일차
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2021/05/28/day/day9/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">데이터 사이언스/엔지니어 과정 9일차</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/baek-joon/">baek joon</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EA%B8%B0/">일기</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EA%B8%B0/multicampus/">multicampus</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EA%B8%B0/%EA%B0%9C%EC%9D%B8-%EA%B3%B5%EB%B6%80/">개인 공부</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a><span class="archive-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%EC%9D%BC%EA%B8%B0/">일기</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/%EC%9D%BC%EA%B8%B0/multicampus/">multicampus</a></p>
+                            <p class="item-title"><a href="/2021/06/07/day/day15/" class="title">데이터 사이언스/엔지니어 과정 14일차</a></p>
+                            <p class="item-date"><time datetime="2021-06-07T08:16:41.000Z" itemprop="datePublished">2021-06-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/algorithm/">algorithm</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/algorithm/baek-joon/">baek joon</a></p>
+                            <p class="item-title"><a href="/2021/06/06/beakjoon/problem5/" class="title">더하기 사이클</a></p>
+                            <p class="item-date"><time datetime="2021-06-06T02:47:23.000Z" itemprop="datePublished">2021-06-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%EC%9D%BC%EA%B8%B0/">일기</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/%EC%9D%BC%EA%B8%B0/%EA%B0%9C%EC%9D%B8-%EA%B3%B5%EB%B6%80/">개인 공부</a></p>
+                            <p class="item-title"><a href="/2021/06/05/day/day14/" class="title">개인 공부 중</a></p>
+                            <p class="item-date"><time datetime="2021-06-05T14:44:49.000Z" itemprop="datePublished">2021-06-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/algorithm/">algorithm</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/algorithm/baek-joon/">baek joon</a></p>
+                            <p class="item-title"><a href="/2021/06/05/beakjoon/problem4/" class="title">X 보다 작은 수</a></p>
+                            <p class="item-date"><time datetime="2021-06-05T13:33:28.000Z" itemprop="datePublished">2021-06-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/algorithm/">algorithm</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/algorithm/baek-joon/">baek joon</a></p>
+                            <p class="item-title"><a href="/2021/06/05/beakjoon/problem3/" class="title">빠른 A + B</a></p>
+                            <p class="item-date"><time datetime="2021-06-05T13:30:28.000Z" itemprop="datePublished">2021-06-05</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 HB Lee</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://ouguro3.github.io/2021/06/01/day/day10/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
