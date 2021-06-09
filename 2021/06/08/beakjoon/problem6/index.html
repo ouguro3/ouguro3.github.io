@@ -25,7 +25,7 @@
 <meta property="og:description" content="백준 알고리즘 1차원 배열 문제  세준이는 기말고사를 망쳤다 그래서 점수를 조작하기로 했다   일단 자기 점수중 최댓값을 고르고 모든 점수를 점수&#x2F;최대값 * 100으로 고쳤다   바뀐 점수로 새로운 평균을 구하시오 입력  첫째줄에 시험 본 과목의 개수 N 이 주어진다둘째줄에 세준이의 현재 성적이 주어진다 출력  첫째 줄에 새로운 평균을 출력한다. 123#">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-07T16:08:23.000Z">
-<meta property="article:modified_time" content="2021-06-09T16:22:05.400Z">
+<meta property="article:modified_time" content="2021-06-09T16:25:20.255Z">
 <meta property="article:author" content="HB Lee">
 <meta name="twitter:card" content="summary">
     
@@ -182,7 +182,7 @@
 <!-- <div class="article-date"> -->
 <!--   <i class="fa fa-calendar-plus-o"></i> -->
 <!--   <a href="/2021/06/08/beakjoon/problem6/" class="article-date"> -->
-<!--      <time datetime="2021-06-09T16:22:05.400Z" itemprop="dateModified">2021-06-10</time> -->
+<!--      <time datetime="2021-06-09T16:25:20.255Z" itemprop="dateModified">2021-06-10</time> -->
 <!--   </a> -->
 <!-- </div> -->
 <!--  -->
@@ -217,10 +217,10 @@
 <p><strong>첫째 줄에 새로운 평균을 출력한다.</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Ex 입력</span><br><span class="line">3</span><br><span class="line">40 80 60</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Ex 출력</span><br><span class="line">75.0</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 작성 답안</span><br><span class="line"></span><br><span class="line">total = 0</span><br><span class="line"></span><br><span class="line">n = int(input())</span><br><span class="line">b = list(map(int,input().split()))</span><br><span class="line">max_num = max(b)</span><br><span class="line">for i in range(n):</span><br><span class="line">    b[i] = b[i] / max_num * 100</span><br><span class="line">for i in b:</span><br><span class="line">    total += i</span><br><span class="line">total /= n</span><br><span class="line">print(total)</span><br></pre></td></tr></table></figure>
-<p><strong>출력은 정상적으로 나온다</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># 작성 답안</span><br><span class="line"></span><br><span class="line"># 수정 전</span><br><span class="line"></span><br><span class="line">total = 0</span><br><span class="line">n = int(input())</span><br><span class="line">b = list(map(int,input().split()))</span><br><span class="line">for i in range(n):</span><br><span class="line">    b.sort()</span><br><span class="line">    b[i] = b[i] / max(b) * 100</span><br><span class="line">    print(b)</span><br><span class="line">for i in b:</span><br><span class="line">    total += i</span><br><span class="line">total /= n</span><br><span class="line">print(total)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 수정 후</span><br><span class="line">total = 0</span><br><span class="line"></span><br><span class="line">n = int(input())</span><br><span class="line">b = list(map(int,input().split()))</span><br><span class="line">max_num = max(b)</span><br><span class="line">for i in range(n):</span><br><span class="line">    b[i] = b[i] / max_num * 100</span><br><span class="line">for i in b:</span><br><span class="line">    total += i</span><br><span class="line">total /= n</span><br><span class="line">print(total)</span><br></pre></td></tr></table></figure>
+
 <p><strong>막혔던점 : 40 80 60 입력을 받아 for문으로 새로운 평균을 구하는데<br>60의 새로운 평균이 정상적으로 나오지 않았다</strong>  </p>
-<p><strong>원인 : <code>b[i] = b[i] / max(b) * 100</code>  코드에 max값을 실시간으로 가져오니<br>바뀐 평균값에서 맥스값이 변경되어 60의 평균이 제대로 나오지 않았던것</strong>  </p>
+<p><strong>원인 : <code>b[i] = b[i] / max(b) * 100</code>  코드에 max값을 실시간으로 가져오니<br>바뀐 평균값에서 max값이 변경되어 60의 평균이 제대로 나오지 않았던것</strong>  </p>
 <p><strong>수정 : max_num 변수를 지정해 for문 외부에서 max값을 미리 저장해놨다<br>그 후 동일한 코드에서 <code>max(b)</code> 부분에 <code>max_num</code> 을 대입 👍</strong></p>
 
         </div>
@@ -319,7 +319,7 @@
 
 첫째 줄에 새로운 평균을 출력한다.
 123# ",
-        "wordCount": 194
+        "wordCount": 264
     }
 </script>
 
