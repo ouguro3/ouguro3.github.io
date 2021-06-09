@@ -17,15 +17,15 @@
     
     <meta name="keywords" content="" />
     
-    <meta name="description" content="백준 알고리즘 while 문 문제 문제 : 더하기 사이클 입력된 수가 10보다 작다면 앞에 0을 붙여 두 자리 수로 만들고, 각 자리의 숫자를 더한다.  입력된 수의 가장 오른쪽 자리 수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면 새로운  수를 만들 수 있다 예) 26 -&gt; 2+6 &#x3D; 8  -&gt; 새로운 수 68 -&gt; 6 + 8">
+    <meta name="description" content="백준 알고리즘 while 문 문제  입력된 수가 10보다 작다면 앞에 0을 붙여 두 자리 수로 만들고, 각 자리의 숫자를 더한다.  입력된 수의 가장 오른쪽 자리 수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면새로운  수를 만들 수 있다 예) 26 -&gt; 2+6 &#x3D; 8  -&gt; 새로운 수 68 -&gt; 6 + 8 &#x3D; 14 -&gt; 새로">
 <meta property="og:type" content="article">
 <meta property="og:title" content="더하기 사이클">
 <meta property="og:url" content="https://ouguro3.github.io/2021/06/06/beakjoon/problem5/index.html">
 <meta property="og:site_name" content="Ouguro BD">
-<meta property="og:description" content="백준 알고리즘 while 문 문제 문제 : 더하기 사이클 입력된 수가 10보다 작다면 앞에 0을 붙여 두 자리 수로 만들고, 각 자리의 숫자를 더한다.  입력된 수의 가장 오른쪽 자리 수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면 새로운  수를 만들 수 있다 예) 26 -&gt; 2+6 &#x3D; 8  -&gt; 새로운 수 68 -&gt; 6 + 8">
+<meta property="og:description" content="백준 알고리즘 while 문 문제  입력된 수가 10보다 작다면 앞에 0을 붙여 두 자리 수로 만들고, 각 자리의 숫자를 더한다.  입력된 수의 가장 오른쪽 자리 수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면새로운  수를 만들 수 있다 예) 26 -&gt; 2+6 &#x3D; 8  -&gt; 새로운 수 68 -&gt; 6 + 8 &#x3D; 14 -&gt; 새로">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-06T02:47:23.000Z">
-<meta property="article:modified_time" content="2021-06-06T03:08:22.757Z">
+<meta property="article:modified_time" content="2021-06-09T14:51:58.162Z">
 <meta property="article:author" content="HB Lee">
 <meta name="twitter:card" content="summary">
     
@@ -182,7 +182,7 @@
 <!-- <div class="article-date"> -->
 <!--   <i class="fa fa-calendar-plus-o"></i> -->
 <!--   <a href="/2021/06/06/beakjoon/problem5/" class="article-date"> -->
-<!--      <time datetime="2021-06-06T03:08:22.757Z" itemprop="dateModified">2021-06-06</time> -->
+<!--      <time datetime="2021-06-09T14:51:58.162Z" itemprop="dateModified">2021-06-09</time> -->
 <!--   </a> -->
 <!-- </div> -->
 <!--  -->
@@ -205,23 +205,23 @@
             
 
             <p><strong>백준 알고리즘 while 문 문제</strong></p>
-<h3 id="문제-더하기-사이클"><a href="#문제-더하기-사이클" class="headerlink" title="문제 : 더하기 사이클"></a>문제 : 더하기 사이클</h3><hr>
-<p>입력된 수가 10보다 작다면 앞에 0을 붙여 두 자리 수로 만들고, 각 자리의 숫자를 더한다. </p>
-<p>입력된 수의 가장 오른쪽 자리 수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면<br> 새로운  수를 만들 수 있다</p>
-<p>예) 26 -&gt; 2+6 = 8  -&gt; 새로운 수 68 -&gt; 6 + 8 = 14 -&gt; 새로운 수 84 -&gt; 8 + 4 = 12…    </p>
-<p>입력된 수가 몇번의 사이클만에 원래의 수와 같아지는지 구하는 프로그램 작성</p>
+<hr>
+<p><strong>입력된 수가 10보다 작다면 앞에 0을 붙여 두 자리 수로 만들고, 각 자리의 숫자를 더한다.</strong> </p>
+<p><strong>입력된 수의 가장 오른쪽 자리 수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면</strong><br><strong>새로운  수를 만들 수 있다</strong></p>
+<p><strong>예) 26 -&gt; 2+6 = 8  -&gt; 새로운 수 68 -&gt; 6 + 8 = 14 -&gt; 새로운 수 84 -&gt; 8 + 4 = 12…</strong>    </p>
+<p><strong>입력된 수가 몇번의 사이클만에 원래의 수와 같아지는지 구하는 프로그램 작성</strong></p>
 <hr>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Ex 입력</span><br><span class="line">26</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Ex 출력</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 내 답안</span><br><span class="line">n = int(input())</span><br><span class="line">cnt = 0</span><br><span class="line">m = n</span><br><span class="line">while True:</span><br><span class="line">    if m &lt; 10:</span><br><span class="line">        m1 = m*11</span><br><span class="line">    n2 = m // 10</span><br><span class="line">    n3 = m % 10</span><br><span class="line">    n4 = (n2+n3) % 10</span><br><span class="line">    n5 = n3*10 + n4</span><br><span class="line">    cnt += 1</span><br><span class="line">    if n5 == n:</span><br><span class="line">        break</span><br><span class="line">    m = n5</span><br><span class="line">print(cnt)</span><br></pre></td></tr></table></figure>
-<p>시간이 조금 걸렸다  </p>
-<p>처음에 생각한 방법은 더하기 전 숫자의 1의 자릿수와 더한 수를 str() 변환해 합치고  </p>
-<p>다시 int 로 변환하고 이런 과정을 거치는 것을 생각했는데 이걸 돌리면 시간도 더 걸리고<br>복잡해질것 같아 다시 생각했다  </p>
-<p>1의 자릿수는 입력받은 수에서 10으로 나눈 몫을,<br>10의 자릿수는 입력받은 수에서 10으로 나눈 값을 구하면 쉽게 얻을 수 있었다  </p>
-<p>둘을 더한 수에서 1의 자릿수를 추출하는것도 역시 더한 값에서 10으로 나눈 몫을 구했다  </p>
-<p>그 후에 원래 숫자의 1의 자릿수에 10을 곱해 10의 자릿수로 만들고 거기에 더한 값의<br>1의 자릿수를 더해 새로운 수를 구할 수 있었다  </p>
-<p>처음 문제를 볼 때 내가 너무 어렵게 생각하는 경향이 있는것같다  </p>
-<p>수학쪽이 약해서 그런걸까<br>그래도 풀고나니 퍼즐을 하나 푼 느낌이라 좋다 👍</p>
+<p><strong>시간이 조금 걸렸다</strong>  </p>
+<p><strong>처음에 생각한 방법은 더하기 전 숫자의 1의 자릿수와 더한 수를 str() 변환해 합치고</strong>  </p>
+<p><strong>다시 int 로 변환하고 이런 과정을 거치는 것을 생각했는데 이걸 돌리면 시간도 더 걸리고</strong><br><strong>복잡해질것 같아 다시 생각했다</strong>  </p>
+<p><strong>1의 자릿수는 입력받은 수에서 10으로 나눈 몫을,</strong><br><strong>10의 자릿수는 입력받은 수에서 10으로 나눈 값을 구하면 쉽게 얻을 수 있었다</strong> </p>
+<p><strong>둘을 더한 수에서 1의 자릿수를 추출하는것도 역시 더한 값에서 10으로 나눈 몫을 구했다</strong>  </p>
+<p><strong>그 후에 원래 숫자의 1의 자릿수에 10을 곱해 10의 자릿수로 만들고 거기에 더한 값의</strong><br><strong>1의 자릿수를 더해 새로운 수를 구할 수 있었다</strong>  </p>
+<p><strong>처음 문제를 볼 때 내가 너무 어렵게 생각하는 경향이 있는것같다</strong>  </p>
+<p><strong>수학쪽이 약해서 그런걸까</strong><br><strong>그래도 풀고나니 퍼즐을 하나 푼 느낌이라 좋다 👍</strong></p>
 
         </div>
         <footer class="article-footer">
@@ -305,14 +305,14 @@
         "genre": "algorithm baek joon",
         "datePublished": "2021-06-06",
         "dateCreated": "2021-06-06",
-        "dateModified": "2021-06-06",
+        "dateModified": "2021-06-09",
         "url": "https://ouguro3.github.io/2021/06/06/beakjoon/problem5/",
         "description": "백준 알고리즘 while 문 문제
-문제 : 더하기 사이클
+
 입력된 수가 10보다 작다면 앞에 0을 붙여 두 자리 수로 만들고, 각 자리의 숫자를 더한다. 
-입력된 수의 가장 오른쪽 자리 수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면 새로운  수를 만들 수 있다
-예) 26 -&gt; 2+6 = 8  -&gt; 새로운 수 68 -&gt; 6 + 8 ",
-        "wordCount": 341
+입력된 수의 가장 오른쪽 자리 수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면새로운  수를 만들 수 있다
+예) 26 -&gt; 2+6 = 8  -&gt; 새로운 수 68 -&gt; 6 + 8 = 14 -&gt; 새로",
+        "wordCount": 329
     }
 </script>
 
