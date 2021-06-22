@@ -11,21 +11,21 @@
     
 
     
-    <title>데이터 사이언스/엔지니어 과정 22일차 | Ouguro BD</title>
+    <title>데이터 사이언스/엔지니어 과정 26일차 | Ouguro BD</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="keywords" content="" />
     
-    <meta name="description" content="오늘의 학습내용  feature selection   feature selection을 배웠다 어떤 값이 나오고 어떤 원리로 돌아가는지는 알겠는데정작 이것을 왜 사용하는지 감이 잘 오지않는다   열과 열의 관계를 수치로 나타내 연관성이 있는 열은 합치고별 상관이 없는 열은 지우고 하는 그런 역할인걸까 내가 제일 무서웠던것이 의미없이 그저 코드를 따라치는것">
+    <meta name="description" content="오늘의 학습내용  Django   오늘은 장고로 웹 페이지를 간단하게 구현했다   목적이 크롤링인데 어째서 웹 페이지를 구현하는지 살짝 의문이 들었지만   원래 흥미있는 분야 이기도했고,  나중에 필요할 수 도 있을것같아 열심히 들었다   살짝 막히는 부분도 있었지만 Django 튜토리얼을 따라하며 무리 없이 진행했다   다만 조금 아쉬운점은 Mac OS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="데이터 사이언스&#x2F;엔지니어 과정 22일차">
-<meta property="og:url" content="https://ouguro3.github.io/2021/06/17/day/day23/index.html">
+<meta property="og:title" content="데이터 사이언스&#x2F;엔지니어 과정 26일차">
+<meta property="og:url" content="https://ouguro3.github.io/2021/06/22/day/day27/index.html">
 <meta property="og:site_name" content="Ouguro BD">
-<meta property="og:description" content="오늘의 학습내용  feature selection   feature selection을 배웠다 어떤 값이 나오고 어떤 원리로 돌아가는지는 알겠는데정작 이것을 왜 사용하는지 감이 잘 오지않는다   열과 열의 관계를 수치로 나타내 연관성이 있는 열은 합치고별 상관이 없는 열은 지우고 하는 그런 역할인걸까 내가 제일 무서웠던것이 의미없이 그저 코드를 따라치는것">
+<meta property="og:description" content="오늘의 학습내용  Django   오늘은 장고로 웹 페이지를 간단하게 구현했다   목적이 크롤링인데 어째서 웹 페이지를 구현하는지 살짝 의문이 들었지만   원래 흥미있는 분야 이기도했고,  나중에 필요할 수 도 있을것같아 열심히 들었다   살짝 막히는 부분도 있었지만 Django 튜토리얼을 따라하며 무리 없이 진행했다   다만 조금 아쉬운점은 Mac OS">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-17T10:14:39.000Z">
-<meta property="article:modified_time" content="2021-06-18T19:37:03.975Z">
+<meta property="article:published_time" content="2021-06-22T14:25:03.000Z">
+<meta property="article:modified_time" content="2021-06-22T14:52:26.979Z">
 <meta property="article:author" content="HB Lee">
 <meta name="twitter:card" content="summary">
     
@@ -155,14 +155,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-day/day23" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-day/day27" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        데이터 사이언스/엔지니어 과정 22일차
+        데이터 사이언스/엔지니어 과정 26일차
         </h1>
     
 
@@ -173,16 +173,16 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2021/06/17/day/day23/" class="article-date">
-       <time datetime="2021-06-17T10:14:39.000Z" itemprop="datePublished">2021-06-17</time>
+    <a href="/2021/06/22/day/day27/" class="article-date">
+       <time datetime="2021-06-22T14:25:03.000Z" itemprop="datePublished">2021-06-22</time>
     </a>
   </div>
 
 <!--  -->
 <!-- <div class="article-date"> -->
 <!--   <i class="fa fa-calendar-plus-o"></i> -->
-<!--   <a href="/2021/06/17/day/day23/" class="article-date"> -->
-<!--      <time datetime="2021-06-18T19:37:03.975Z" itemprop="dateModified">2021-06-19</time> -->
+<!--   <a href="/2021/06/22/day/day27/" class="article-date"> -->
+<!--      <time datetime="2021-06-22T14:52:26.979Z" itemprop="dateModified">2021-06-22</time> -->
 <!--   </a> -->
 <!-- </div> -->
 <!--  -->
@@ -207,20 +207,28 @@
             <hr>
 <p><strong>오늘의 학습내용</strong></p>
 <ul>
-<li>feature selection</li>
+<li>Django</li>
 </ul>
 <hr>
-<p><strong>feature selection을 배웠다</strong></p>
-<p><strong>어떤 값이 나오고 어떤 원리로 돌아가는지는 알겠는데<br>정작 이것을 왜 사용하는지 감이 잘 오지않는다</strong>  </p>
-<p><strong>열과 열의 관계를 수치로 나타내 연관성이 있는 열은 합치고<br>별 상관이 없는 열은 지우고 하는 그런 역할인걸까</strong></p>
-<p><strong>내가 제일 무서웠던것이 의미없이 그저 코드를 따라치는것인데<br>의미는 알겠으나 이게 실제 분석과정에서 쓰이는지 의문이다</strong></p>
-<p><strong>내 통계 공부가 부족해서 이해가 잘 안되는것이겠지</strong></p>
-<p><strong>예전에는 이렇게 접근해본적이 없어 더 낮설었던것같다</strong></p>
-<p><strong><code>minmaxscaler</code> 라던지 <code>standardscaler</code>는 인공지능을 공부하며 실제 사용해본적이 있어<br>이해는 잘 갔다</strong></p>
-<p><strong>그런데 교과목에는 풀스택 프로그래밍이라고 되어 있었는데<br>이런 이론적인 내용도 풀스택에 들어가는건가?</strong></p>
-<p><strong>약간의 의문이 남았다</strong></p>
-<p><strong>그나저나 7월에 또 시험이 있는데 지금 상태로는 조금 힘들수도 있겠다는 생각이 든다</strong></p>
-<p><strong>복습은 매일매일 제대로 해야지</strong></p>
+<p><strong>오늘은 장고로 웹 페이지를 간단하게 구현했다</strong>  </p>
+<p><strong>목적이 크롤링인데 어째서 웹 페이지를 구현하는지 살짝 의문이 들었지만</strong>  </p>
+<p><strong>원래 흥미있는 분야 이기도했고,  나중에 필요할 수 도 있을것같아 열심히 들었다</strong>  </p>
+<p><strong>살짝 막히는 부분도 있었지만 Django 튜토리얼을 따라하며 무리 없이 진행했다</strong>  </p>
+<p><strong>다만 조금 아쉬운점은 Mac OS 를 사용하시는 분들과 Windows 를 사용하는 사람이 있었는데</strong>  </p>
+<p><strong>둘의 환경이 다르다보니 Mac 을 사용하시는 분들의 문제가 이것저것 발생했다</strong>  </p>
+<p><strong>그리고 왜인지는 모르겠지만 Anaconda의 Path 문제가 발생해서 많은 동기분들이 고통받았다</strong>  </p>
+<p><strong>이게 원격 수업이 참 불편한게 오류가 발생한 분들을 바로 도와줄 수 가 없고,</strong>  </p>
+<p><strong>도와준다고 해도 에러메세지를 확인하는게 어려워 시간이 많이 소요된다</strong>  </p>
+<p><strong>FT님들과 강사님의 고민이 매우 많을듯하다</strong>  </p>
+<p><strong>어쨋든 수업은 진행되어 admin을 추가하는 곳까지 진행했고 내일은 눈에 보이는 결과가 나올듯하다</strong>  </p>
+<p><strong>오후에는 팀 프로젝트 관련해서 회의를 진행했다</strong>  </p>
+<p><strong>어제 생각했던 문화재 관련 데이터는 이것저것 많이 생각해봤지만 뭔가 스토리텔링을 하기에는</strong>  </p>
+<p><strong>조금 어려운 데이터 및 주제라고 결론이 났다</strong>  </p>
+<p><strong>그래서 다시 생각한 주제는 총 3개로 <code>코로나 19 이후 여가활동의 변화</code> <code>일자리 변화</code> 그리고 <code>독거노인</code> 관련 주제이다</strong></p>
+<p><strong>셋다 재미있는주제라 고민이 되지만 쓸만한 데이터가 있는 주제로 가야할듯하다</strong>  </p>
+<p><strong>근데 어차피 또 변화가 있을것이다   내가 예전에 그랬듯이</strong>  </p>
+<p><strong>금요일까지는 주제가 제대로 정해져야 할텐데</strong>  </p>
+<p><strong>데이터나 긁으러 가봐야겠다</strong></p>
 
         </div>
         <footer class="article-footer">
@@ -228,7 +236,7 @@
 
 
 
-    <a data-url="https://ouguro3.github.io/2021/06/17/day/day23/" data-id="ckq2qwn7b0000g8td18dz7gkt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ouguro3.github.io/2021/06/22/day/day27/" data-id="ckq86edgd0000x4td0sk2a3eb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -298,25 +306,26 @@
             "@type": "Person",
             "name": "HB Lee"
         },
-        "headline": "데이터 사이언스/엔지니어 과정 22일차",
+        "headline": "데이터 사이언스/엔지니어 과정 26일차",
         "image": "https://ouguro3.github.io",
         "keywords": "",
         "genre": "일기 multicampus",
-        "datePublished": "2021-06-17",
-        "dateCreated": "2021-06-17",
-        "dateModified": "2021-06-19",
-        "url": "https://ouguro3.github.io/2021/06/17/day/day23/",
+        "datePublished": "2021-06-22",
+        "dateCreated": "2021-06-22",
+        "dateModified": "2021-06-22",
+        "url": "https://ouguro3.github.io/2021/06/22/day/day27/",
         "description": "
 오늘의 학습내용
 
-feature selection
+Django
 
 
-feature selection을 배웠다
-어떤 값이 나오고 어떤 원리로 돌아가는지는 알겠는데정작 이것을 왜 사용하는지 감이 잘 오지않는다  
-열과 열의 관계를 수치로 나타내 연관성이 있는 열은 합치고별 상관이 없는 열은 지우고 하는 그런 역할인걸까
-내가 제일 무서웠던것이 의미없이 그저 코드를 따라치는것",
-        "wordCount": 91
+오늘은 장고로 웹 페이지를 간단하게 구현했다  
+목적이 크롤링인데 어째서 웹 페이지를 구현하는지 살짝 의문이 들었지만  
+원래 흥미있는 분야 이기도했고,  나중에 필요할 수 도 있을것같아 열심히 들었다  
+살짝 막히는 부분도 있었지만 Django 튜토리얼을 따라하며 무리 없이 진행했다  
+다만 조금 아쉬운점은 Mac OS",
+        "wordCount": 193
     }
 </script>
 
@@ -357,20 +366,10 @@ feature selection을 배웠다
         
 <nav id="article-nav">
     
-        <a href="/2021/06/18/day/day24/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            데이터 사이언스/엔지니어 과정 23일차
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2021/06/16/day/day22/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2021/06/21/day/day26/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">데이터 사이언스/엔지니어 과정 21일차</p>
+        <p class="article-nav-title">데이터 사이언스/엔지니어 과정 25일차</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -506,7 +505,7 @@ feature selection을 배웠다
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://ouguro3.github.io/2021/06/17/day/day23/';
+    var disqus_url = 'https://ouguro3.github.io/2021/06/22/day/day27/';
     
     (function() {
     var dsq = document.createElement('script');
